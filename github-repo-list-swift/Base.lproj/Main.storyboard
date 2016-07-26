@@ -1,26 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jEh-SU-cpr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aX6-0D-xxi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Repos Table View Controller-->
+        <!--FisHub-->
         <scene sceneID="kHl-XM-Lvk">
             <objects>
                 <tableViewController id="jEh-SU-cpr" customClass="ReposTableViewController" customModule="github_repo_list_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YL9-co-Kih">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="YL9-co-Kih">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="repoCell" id="Grv-td-jWg">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellId" rowHeight="60" id="Grv-td-jWg" customClass="GHRepoCell" customModule="github_repo_list_swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Grv-td-jWg" id="bmW-Za-fVX">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://github.com/mojombo/god" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv3-jX-4N7">
+                                            <rect key="frame" x="8" y="30" width="559" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.68888300657272339" green="0.71366006135940552" blue="0.73448425531387329" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mojomo/god" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCD-4V-ysl">
+                                            <rect key="frame" x="8" y="9" width="559" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="wun-oz-Mtz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <color key="textColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dCD-4V-ysl" firstAttribute="top" secondItem="bmW-Za-fVX" secondAttribute="topMargin" constant="1" id="Dmw-ps-xUk"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rv3-jX-4N7" secondAttribute="bottom" constant="0.5" id="EtB-bV-s24"/>
+                                        <constraint firstItem="dCD-4V-ysl" firstAttribute="leading" secondItem="rv3-jX-4N7" secondAttribute="leading" id="MQr-6k-Ylh"/>
+                                        <constraint firstItem="dCD-4V-ysl" firstAttribute="leading" secondItem="bmW-Za-fVX" secondAttribute="leadingMargin" id="Pa7-Cb-waL"/>
+                                        <constraint firstItem="rv3-jX-4N7" firstAttribute="top" secondItem="dCD-4V-ysl" secondAttribute="bottom" id="nV9-7H-3mK"/>
+                                        <constraint firstItem="dCD-4V-ysl" firstAttribute="trailing" secondItem="rv3-jX-4N7" secondAttribute="trailing" id="oER-cQ-kzJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="dCD-4V-ysl" secondAttribute="trailing" id="vj5-J9-k15"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="repoLinkLabel" destination="rv3-jX-4N7" id="deg-cs-7xu"/>
+                                    <outlet property="repoNameLabel" destination="dCD-4V-ysl" id="n2n-T2-wcs"/>
+                                    <segue destination="fmz-oa-Guh" kind="show" id="j3T-oR-ywa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -28,8 +60,60 @@
                             <outlet property="delegate" destination="jEh-SU-cpr" id="gBG-GT-1Ib"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="FisHub" id="mvR-Kp-5HV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ash-bo-Z1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233" y="428"/>
+        </scene>
+        <!--Repo Web View Controller-->
+        <scene sceneID="tm0-EN-Gte">
+            <objects>
+                <viewController id="fmz-oa-Guh" customClass="RepoWebViewController" customModule="github_repo_list_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LsD-QE-wYL"/>
+                        <viewControllerLayoutGuide type="bottom" id="0om-kn-8Cl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iMI-wC-PMp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gp-QF-ORy">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6gp-QF-ORy" secondAttribute="trailing" id="DFW-n0-BV7"/>
+                            <constraint firstItem="6gp-QF-ORy" firstAttribute="leading" secondItem="iMI-wC-PMp" secondAttribute="leading" id="IDj-Kt-sx7"/>
+                            <constraint firstItem="6gp-QF-ORy" firstAttribute="bottom" secondItem="0om-kn-8Cl" secondAttribute="top" id="XQA-O6-jQR"/>
+                            <constraint firstItem="6gp-QF-ORy" firstAttribute="top" secondItem="iMI-wC-PMp" secondAttribute="top" id="mjw-4b-plQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="6gp-QF-ORy" id="DzV-Pi-0TA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x3d-vU-T7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1885" y="428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vh7-oD-n5k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aX6-0D-xxi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O3c-wp-WjJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jEh-SU-cpr" kind="relationship" relationship="rootViewController" id="guG-0d-ncm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IvU-IA-Xxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="562" y="428"/>
         </scene>

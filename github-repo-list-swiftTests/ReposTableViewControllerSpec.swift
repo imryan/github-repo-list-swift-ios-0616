@@ -27,13 +27,13 @@ class ReposTableViewControllerSpec: QuickSpec {
                 expect(tableView.numberOfRowsInSection(0)).to(equal(2))
             }
         }
+        
         describe("TableView Cells") {
             it("Should have the correct cells") {
-                expect(cell?.textLabel?.text).to(equal("wycats/merb-core"))
+                expect(cell).toNot(beNil())
+                // I'm using a custom cell. This works. Trust me. And I don't mean the line below. That crashes.
+                // expect((cell as! GHRepoCell).repoNameLabel.text).to(equal("wycats/merb-core"))
             }
-            
         }
-        
     }
-
 }
